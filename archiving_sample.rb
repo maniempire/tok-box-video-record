@@ -60,7 +60,7 @@ class ArchivingSample < Sinatra::Base
 
   post '/start' do
     archive = settings.opentok.archives.create settings.session.session_id, {
-      :name => "Ruby Archiving Sample App",
+      :name => "#{params[:person_name]} Video Recording",
       :output_mode => params[:output_mode],
       :has_audio => params[:has_audio] == "on",
       :has_video => params[:has_video] == "on"
